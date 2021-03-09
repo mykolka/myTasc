@@ -29,10 +29,10 @@
 								<a href="#" data-toggle="dropdown">
 									All furniture<img src="icons/icon-arrow-header.png" alt="">
 								</a>
-								 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-								    <a class="dropdown-item" href="#">Action</a>
-								    <a class="dropdown-item" href="#">Another action</a>
-								    <a class="dropdown-item" href="#">Something else here</a>
+								 <div class="dropdown-menu">
+								    <a class="dropdown-item" href="#">tables</a>
+								    <a class="dropdown-item" href="#">chairs</a>
+								    <a class="dropdown-item" href="#">sofas</a>
 								  </div>
 
 							</li>
@@ -60,8 +60,8 @@
 				<div class="row">
 					<div class="social col-lg-1 ml-auto">
 						<div class="social__box">
-							<a href=""><img src="icons/Orion_twitter.png" alt=""></a>
-							<a href=""><img src="icons/Orion_facebook.png" alt=""></a>
+							<a href="https://www.twitter.com"><img src="icons/Orion_twitter.png" alt=""></a>
+							<a href="https://www.facebook.com"><img src="icons/Orion_facebook.png" alt=""></a>
 						</div>
 					</div>
 				</div>
@@ -298,7 +298,7 @@
     let _itemsArray = [];
     let _timerId;
     let _indicatorItems;
-    let _indicatorIndex = 0;
+    let _indicatorIndex = 0 ;
     let _indicatorIndexMax = _sliderItems.length - 1;
     let _stepTouch = 50;
     let _config = {
@@ -344,7 +344,12 @@
           var nextItem, currentIndicator = _indicatorIndex;
           if (direction === 'next') {
             _currentPosition++;
-            if (_currentPosition > position.getItemPosition('max')) {
+            if (_currentPosition > position.getItemPosition('min')+3) {
+
+
+
+
+
               nextItem = position.getItemIndex('min');
               _itemsArray[nextItem].position = position.getItemPosition('max') + 1;
               _itemsArray[nextItem].transform += _itemsArray.length * 100;
@@ -357,7 +362,7 @@
             }
           } else {
             _currentPosition--;
-            if (_currentPosition < position.getItemPosition('min + 7')) {
+            if (_currentPosition < position.getItemPosition('min')) {
               nextItem = position.getItemIndex('max');
               _itemsArray[nextItem].position = position.getItemPosition('min') - 1;
               _itemsArray[nextItem].transform -= _itemsArray.length * 100;

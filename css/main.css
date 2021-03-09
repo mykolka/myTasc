@@ -1,5 +1,12 @@
 body{
 	font-family: 'Poppins', sans-serif;
+	@font-face {
+	font-family: 'Gilroy-Light';
+	src: local('Gilroy-Light'),
+	     url('../fonts/Gilroy-Light.otf') format('otf'),
+	font-weight: normal;
+	font-style: normal;
+}
 }
 
 ul,li{
@@ -33,14 +40,14 @@ ul,li{
 }
 .menu li a{
 	text-decoration: none;
-	font-family: Gilroy-bold;
+	font-family: Gilroy-Light;
 	font-size: 15px;
 	line-height: 18px;
 	letter-spacing: 0.01em;
 	color: #FCFCFC;
 }
-.dropdown-menu.show{
-	background: #E1E1E1;
+.dropdown-menu{
+	background: grey;
 	color: #333333;
 }
 .title{
@@ -84,8 +91,10 @@ ul,li{
 	justify-content: space-between;
 }
 .social img{
+	position: relative;
 	width: 16px;
 	height: 16px;
+	z-index: 12;
 
 }
 .title__content__left{
